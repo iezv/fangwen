@@ -4,10 +4,18 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UIComponent } from './components/ui/ui.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ToolBarComponent } from './components/toolbar/toolbar.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UIComponent,
+    FooterComponent,
+    ToolBarComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
