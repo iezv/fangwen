@@ -1,8 +1,8 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark teal darken-4" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Cefa Smart</a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
@@ -11,16 +11,20 @@
       <li class="nav-item active">
         <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Video<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Reading<span class="sr-only">(current)</span></a>
+      </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          Basic dropdown<span class="caret"></span></a>
+          Lessons<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Words</a>
           <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Exam</a>
         </div>
       </li>
 
@@ -43,11 +47,9 @@
           <div class="btn-group" mdbDropdown>
             <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" routerLink="/login">Log on</a>
               <div class="divider dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="dropdown-item" href="#">Settings</a>
             </div>
           </div>
         </a>

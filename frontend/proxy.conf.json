@@ -1,0 +1,6 @@
+{
+  "/api/v2/json": {
+    "target": "http://localhost:8989",
+    "secure": false
+  }
+}
