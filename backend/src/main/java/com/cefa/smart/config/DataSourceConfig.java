@@ -26,7 +26,7 @@ import javax.sql.DataSource;
         basePackages = {"com.cefa.smart.dao"})
 public class DataSourceConfig {
     private static final String JPA_PROPS = "jpa";
-    private static final String DATASOURCE = "datasource";
+    private static final String DATASOURCE = "spring.datasource";
     private static final String PERSISTENCE_UNIT = "PERSISTENCE_UNIT";
     private static final String ENTITY_MANAGER = "ENTITY_MANAGER";
     private static final String ENTITY_MANAGER_FACTORY = "ENTITY_MANAGER_FACTORY";

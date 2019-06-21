@@ -1,10 +1,49 @@
-<main class="text-center py-5">
-
-  <div class="container">
+<main class="text-center py-1">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-
+        <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="assets/images/slides/1sld.png" alt="smart toys">
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="assets/images/slides/2sld.png" alt="smart toys">
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="assets/images/slides/3sld.png" alt="smart toys">
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="assets/images/slides/4sld.png" alt="smart toys">
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4 name-toys">
+        Puzzles
+      </div>
+      <div class="col-md-4 name-toys">
+        Building blocks
+      </div>
+      <div class="col-md-4 name-toys">
+        Drawing toys
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4 puzzles">
+    </div>
+    <div class="col-md-4 building-blocks">
+    </div>
+    <div class="col-md-4 drawing-toys">
+    </div>
+  </div>
   </div>
 </main>

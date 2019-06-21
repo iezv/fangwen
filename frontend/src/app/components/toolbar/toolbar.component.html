@@ -1,53 +1,53 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark teal darken-4" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg light-green lighten-4" [containerInside]="false">
 
   <!-- Navbar brand -->
   <mdb-navbar-brand><a class="navbar-brand" href="#">Cefa Smart</a></mdb-navbar-brand>
+  <img  class="snake-img d-md-none d-lg-block" src="assets/images/snake.png" width="250">
 
   <!-- Collapsible content -->
   <links>
     <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav">
+      <li class="nav-item menu active">
+        <a class="nav-link">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Video<span class="sr-only">(current)</span></a>
+      <li class="nav-item menu">
+        <a class="nav-link ">Puzzles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Reading<span class="sr-only">(current)</span></a>
+      <li class="nav-item menu">
+        <a class="nav-link">Building blocks</a>
       </li>
-      <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          Lessons<span class="caret"></span></a>
-        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Words</a>
-          <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Exam</a>
-        </div>
+      <li class="nav-item menu">
+        <a class="nav-link">Drawing toys</a>
       </li>
-
     </ul>
-    <!-- Links -->
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
         <a class="nav-link">
-          <mdb-icon fab icon="twitter"></mdb-icon>
+          <mdb-icon fas icon="shopping-basket" size="2x"></mdb-icon>Card
         </a>
       </li>
+    </ul>
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
         <a class="nav-link">
-          <mdb-icon fab icon="google-plus"></mdb-icon>
+          <mdb-icon fas icon="globe-americas" size="2x"></mdb-icon>
+        </a>
+      </li>
+      <li *ngIf="curentUser" class="nav-item">
+        <a class="nav-link">
+          {{ curentUser.firstName }}  {{ curentUser.lastName }}
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link">
           <div class="btn-group" mdbDropdown>
-            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <mdb-icon fas icon="user" size="2x" mdbDropdownToggle></mdb-icon>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-              <a class="dropdown-item" routerLink="/login">Log on</a>
+              <a class="dropdown-item" (click)="logOn()" [routerLink]="['/login']">Log on</a>
               <div class="divider dropdown-divider"></div>
               <a class="dropdown-item" href="#">Settings</a>
             </div>

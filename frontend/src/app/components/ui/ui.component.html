@@ -1,7 +1,17 @@
 <div class="ui-view">
   <div class="view" style="">
-    <div class="full-bg-img">
-        <router-outlet></router-outlet>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <app-leftnav></app-leftnav>
+        </div>
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-2">
+          <app-filtres></app-filtres>
+        </div>
+      </div>
     </div>
   </div>
 </div>
