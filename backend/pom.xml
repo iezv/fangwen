@@ -8,8 +8,8 @@
     <packaging>war</packaging>
 
     <parent>
-        <groupId>com.cefa.smart</groupId>
-        <artifactId>cefa-smart</artifactId>
+        <groupId>com.sefel</groupId>
+        <artifactId>sefel</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -34,7 +34,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.cefa.smart</groupId>
+            <groupId>com.sefel</groupId>
             <artifactId>frontend</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
@@ -132,7 +132,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <configuration>
                         <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
-                        <warName>cefa-smart</warName>
+                        <warName>sefel</warName>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -148,7 +148,7 @@
                                 <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
                                 <resources>
                                     <resource>
-                                        <directory>${project.parent.basedir}/frontend/.tmp</directory>
+                                        <directory>${project.parent.basedir}/frontend/build/dist</directory>
                                     </resource>
                                 </resources>
                             </configuration>

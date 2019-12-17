@@ -1,5 +1,10 @@
 <div class="container-fluid page-body">
-   <app-toolbar [curentUser]="currentUser"></app-toolbar>
+   <app-toolbar [curentUser]="currentUser"
+                [language]="language"
+                (changeLanguage)="changeLanguage($event)">
+
+   </app-toolbar>
+
    <app-ui-view [curentUser]="currentUser">loading...</app-ui-view>
    <app-footer></app-footer>
 </div>

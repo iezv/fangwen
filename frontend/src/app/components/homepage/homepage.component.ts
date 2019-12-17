@@ -16,8 +16,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.curentUser = this.authenticationService.currentUserValue;
-    console.log(this.curentUser);
   }
-
 
 }

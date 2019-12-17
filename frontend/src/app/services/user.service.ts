@@ -31,4 +31,10 @@ export class UserService {
   private log(message: string) {
     this.messageService.add('UserService: ' + message);
   }
+
+  getAllUsers(): Observable<User[]>{
+    return this.http
+      .get<User[]>(this.baseUrl + '/users')
+      .pipe(catchError(this.handleErrorNew([])));
+  }
 }

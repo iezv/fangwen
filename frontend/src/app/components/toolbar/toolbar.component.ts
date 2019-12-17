@@ -1,6 +1,6 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from "../../models/user";
-import {AuthenticationService} from "../../services/authentication.service";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,10 +9,21 @@ import {AuthenticationService} from "../../services/authentication.service";
 })
 export class ToolBarComponent {
   @Input() curentUser: User;
+  @Input() language: string;
+  @Output() changeLanguage: EventEmitter<any> = new EventEmitter<any>();
 
-  logOn(){
+
+  constructor(public translate: TranslateService) {
+  }
+
+  logOut(){
     this.curentUser = null;
   }
 
+  public setLanguage = (language) => {
+    if (this.language === language) return;
+    this.language = language;
+    this.changeLanguage.emit(language);
+  }
 
 }

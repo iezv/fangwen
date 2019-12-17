@@ -1,19 +1,85 @@
-.navbar-brand {
-  font-family: "Unicorns";
-  color: #006F24;
-  margin-right: 5rem;
-  margin-left: 3rem;
-  font-size: 2.25rem;
+.header-navbar{
+  background-image: url(../../../assets/backgraund/whitewood.jpeg);
+  border-bottom: 1px solid #ddd;
+  background-repeat: repeat;
+  height: 216.3px;
+  color: #002727;
+  text-transform: none;
+  text-decoration: none;
 }
-.snake-img{
-  width: 250px;
-  position: fixed;
-  top: 45px;
+.account-menu{
+  height: 51.3px;
+  color: #002727;
 }
-.nav-item.menu{
-  margin-right: 50px;
+.brand-card-search{
+  height: 110px;
 }
-.navbar-nav{
-  color: #006F24;
-  font-weight: bold ;
+.brand-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.block-title{
+  line-height: 68.57px;
+  font-size: 48px;
+  color: #002727;
+  font-family: Pacifico,cursive;
+  margin: 0 0 0 10px;
+  letter-spacing: 3px;
+}
+.losung{
+  position: relative;
+  font-size: 16px;
+  left: -35px;
+  top: 28px;
+  font-family: Pacifico,cursive;
+}
+.cart-search-flex{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #002727;
+}
+.block-cart-flex{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #002727;
+}
+.cart-text{
+  margin-left: 15px;
+}
+.block-search{
+  margin-left: 25px;
+  position: relative;
+  top: 16px;
+}
+.img-flag{
+  margin-right: 10px;
+}
+
+.language-btn{
+  cursor: pointer;
+}
+
+.dropdown-menu.dropdown-primary.flag-menu {
+  border-color: transparent;
+  color: #002727;
+  min-width: 20px;
+}
+.nav-menu-flex{
+  display: flex;
+  height: 45px !important;
+  width: 1161px;
+  align-items: center;
+  text-align: center;
+  justify-content: stretch;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  button{
+    margin: 0 0.5px;
+    padding: 5px;
+    height: 45px;
+    width: 193.33px;
+  }
 }

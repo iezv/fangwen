@@ -1,0 +1,22 @@
+<main class="text-center">
+  <div class="container-fluid">
+    <div class="row">
+         <div class="col-md-1 body-page">
+           <div class="nav">
+              <li class="nav-item" (click)="chooseEl('dashboard')"><a class="nav-link active">Dashboard</a></li>
+              <li class="nav-item" (click)="chooseEl('users')"><a class="nav-link">Users</a></li>
+              <li class="nav-item" (click)="chooseEl('orders')"><a class="nav-link">Orders</a></li>
+              <li class="nav-item" (click)="chooseEl('categories')"><a class="nav-link">Categories</a></li>
+              <li class="nav-item" (click)="chooseEl('items')"><a class="nav-link">Items</a></li>
+           </div>
+         </div>
+      <div class="col-md-11 body-page">
+          <app-admin-dashboard *ngIf="element=='dashboard'"></app-admin-dashboard>
+          <app-admin-users *ngIf="element=='users'"></app-admin-users>
+          <app-admin-orders *ngIf="element=='orders'"></app-admin-orders>
+          <app-admin-categories *ngIf="element=='categories'"></app-admin-categories>
+          <app-admin-items *ngIf="element=='items'"></app-admin-items>
+      </div>
+    </div>
+  </div>
+</main>

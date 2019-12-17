@@ -1,4 +1,4 @@
 FROM java:8
-EXPOSE 8989
-ADD backend/target/cefa-smart.jar cefa-smart.jar
-ENTRYPOINT ["java","-jar","cefa-smart.jar"]
+EXPOSE 8080
+ADD backend/target/sefel.jar sefel.jar
+ENTRYPOINT ["java","-jar","sefel.jar"]

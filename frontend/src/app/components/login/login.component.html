@@ -1,10 +1,11 @@
-<div class="container">
-<mdb-card class="login text-center">
-  <h5 class="card-header info-color white-text text-center teal darken-4 py-3">
+<div class="trans-background" (click)="closeModal()"></div>
+<div class="container body-page">
+ <mdb-card class="login text-center">
+  <h5 class="card-header text-center py-3">
     <strong>Sign in</strong>
   </h5>
   <div class="card-body px-lg-5 pt-0">
-    <form [formGroup]="loginForm" class="text-center" style="color: #757575;" (ngSubmit)="loginCheck(loginForm.value)">
+    <form [formGroup]="loginForm" class="text-center" (ngSubmit)="loginCheck(loginForm.value)">
       <div class="md-form">
         <input type="email"
                id="materialLoginFormEmail"
@@ -31,17 +32,18 @@
           </div>
         </div>
         <div>
-          <a href="">Forgot password?</a>
+          <a href="" class="text-success"> Forgot password?</a>
         </div>
       </div>
       <button mdbBtn outline="true"
               rounded="true"
               block="true"
-              class="my-4 waves-effect z-depth-0"
-              mdbWavesEffect color="info"
+              color="dark-green"
+              class="my-4 waves-effect z-depth-0 sign-in-btn"
+              mdbWavesEffect
               type="submit">Sign in</button>
       <p>Not a member?
-        <a routerLink="/register">Register</a>
+        <a routerLink="/register" class="text-success">Register</a>
       </p>
     </form>
   </div>

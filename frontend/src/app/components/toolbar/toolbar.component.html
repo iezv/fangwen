@@ -1,61 +1,78 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg light-green lighten-4" [containerInside]="false">
-
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">Cefa Smart</a></mdb-navbar-brand>
-  <img  class="snake-img d-md-none d-lg-block" src="assets/images/snake.png" width="250">
-
-  <!-- Collapsible content -->
-  <links>
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item menu active">
-        <a class="nav-link">Home</a>
-      </li>
-      <li class="nav-item menu">
-        <a class="nav-link ">Puzzles</a>
-      </li>
-      <li class="nav-item menu">
-        <a class="nav-link">Building blocks</a>
-      </li>
-      <li class="nav-item menu">
-        <a class="nav-link">Drawing toys</a>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link">
-          <mdb-icon fas icon="shopping-basket" size="2x"></mdb-icon>Card
-        </a>
-      </li>
-    </ul>
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link">
-          <mdb-icon fas icon="globe-americas" size="2x"></mdb-icon>
-        </a>
-      </li>
-      <li *ngIf="curentUser" class="nav-item">
-        <a class="nav-link">
-          {{ curentUser.firstName }}  {{ curentUser.lastName }}
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <div class="btn-group" mdbDropdown>
-            <mdb-icon fas icon="user" size="2x" mdbDropdownToggle></mdb-icon>
-            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-              <a class="dropdown-item" (click)="logOn()" [routerLink]="['/login']">Log on</a>
-              <div class="divider dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Settings</a>
+  <div class="header-navbar container-fluid">
+    <div class="row account-menu">
+      <div class="col-md-8">
+        <nav class="nav py-3">
+          <a class="nav-link text-dark" routerLink="/myaccount">{{'my_account' | translate}}</a>
+          <a class="nav-link text-dark" routerLink="/mywishlist">{{'my_wishlist' | translate}}</a>
+          <a class="nav-link text-dark" routerLink="/mycart">{{'my_cart' | translate}}</a>
+          <a class="nav-link text-dark" routerLink="/checkout">{{'checkout' | translate}}</a>
+          <a *ngIf="!curentUser"class="nav-link text-dark" routerLink="/login">{{'log_in' | translate}}</a>
+          <a *ngIf="curentUser"class="nav-link text-dark" (click)="logOut()">Log Out</a>
+        </nav>
+      </div>
+      <div class="col-md-4">
+        <ul class="nav justify-content-end py-3">
+          <li *ngIf="curentUser" class="nav-item" style="margin-right: 15px">Welcome {{curentUser.firstName}}</li>
+          <li class="nav-item">
+            <div class="btn-group language-btn" href="#" mdbDropdown>
+              <div mdbDropdownToggle>
+                 <img *ngIf="language=='EN'" class="img-flag" height="20" src="../../../assets/images/flags/american.png">
+                 <img *ngIf="language=='IW'" class="img-flag" height="20" src="../../../assets/images/flags/israel.png">
+                 <img *ngIf="language=='RU'"  class="img-flag" height="20" src="../../../assets/images/flags/russia.png">
+                 <mdb-icon fas icon="angle-down" class="text-dark"></mdb-icon>
+              </div>
+              <div class="dropdown-menu dropdown-primary flag-menu">
+                <a class="dropdown-item" (click)="setLanguage('IW')">
+                  <img  class="img-flag" height="20" src="../../../assets/images/flags/israel.png"></a>
+                <a class="dropdown-item" (click)="setLanguage('EN')">
+                  <img  class="img-flag" height="20" src="../../../assets/images/flags/american.png"></a>
+                <a class="dropdown-item" (click)="setLanguage('RU')">
+                  <img  class="img-flag" height="20" src="../../../assets/images/flags/russia.png"></a>
+              </div>
             </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row brand-card-search">
+      <div class="col-md-6 brand-flex">
+         <div class="block-brand">
+           <a href="#"><img height="100" src="../../../assets/images/sefel-logo-short.png"></a>
+         </div>
+        <div class="block-title">
+          <div>{{'sefel' | translate}}</div>
+        </div>
+        <div class="losung">{{'losung' | translate}}</div>
+      </div>
+      <div class="col-md-6 cart-search-flex">
+        <a routerLink="/mycart">
+          <div class="block-cart-flex">
+            <mdb-icon fas icon="shopping-cart" size="lg"></mdb-icon>
+            <div class="cart-text">Cart $ 0.00</div>
           </div>
         </a>
-      </li>
-    </ul>
-  </links>
-  <!-- Collapsible content -->
-</mdb-navbar>
-<!--/.Navbar-->
+        <div class="block-search">
+          <!-- Search form -->
+          <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form mt-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="nav-menu-flex">
+          <button type="button" mdbBtn color="dark" mdbWavesEffect routerLink="/">Home</button>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect>Tea map</button>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect>Coffee map</button>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect>Sweets</button>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect>Attributes</button>
+          <button type="button" mdbBtn color="dark" mdbWavesEffect>Helpful</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

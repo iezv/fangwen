@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Location } from '@angular/common';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from "../../services/authentication.service";
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   error = '';
   @Input() curentUser: User;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder, private location: Location,
               private authenticationService: AuthenticationService,
               private route: ActivatedRoute) {
   }
@@ -35,6 +36,10 @@ export class LoginComponent implements OnInit {
     this.curentUser = this.authenticationService.currentUserValue;
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
+
+   closeModal(){
+      this.location.back();
+   }
 
   loginCheck(post) {
     if (this.loginForm.valid) {

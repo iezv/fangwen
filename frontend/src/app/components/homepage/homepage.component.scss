@@ -1,20 +1,15 @@
-.name-toys {
-  font-family: "Unicorns";
-  color: #006F24;
-  font-size: 2.25rem;
+.home-body{
+ margin-top: 25px;
+ margin-bottom: 25px;
+  min-height: 100px;
 }
-.puzzles{
-  background-image: url("../../../assets/images/puzzles.png");
-  height: 230px;
-  width: 400px;
-}
-.building-blocks{
-  background-image: url("../../../assets/images/building-blocks.png");
-  height: 230px;
-  width: 400px;
-}
-.drawing-toys{
-  background-image: url("../../../assets/images/drawing-toys.png");
-  height: 230px;
-  width: 400px;
+.home-filter{
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  position: relative;
+  padding-right: 2em;
+  padding-left: 2em;
+  border: 1px dotted #ccc;
 }

@@ -1,6 +1,7 @@
+<div class="trans-background" (click)="closeModal()"></div>
 <div class="container">
   <mdb-card class="login text-center">
-  <mdb-card-header class="info-color white-text text-center teal darken-4 py-3">
+  <mdb-card-header class="text-center py-3">
     <h5>
       <strong>Sign up</strong>
     </h5>
@@ -51,12 +52,16 @@
         <label for="materialRegisterFormPhone">Phone number</label>
       </div>
       <mdb-checkbox formControlName="subscribe">Subscribe to our newsletter</mdb-checkbox>
-      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+      <button mdbBtn  color="dark-green"
+              outline="true"
+              rounded="true" block="true"
+              class="my-4 waves-effect z-depth-0"
+              mdbWavesEffect
               type="submit">Sign in</button>
       <hr>
       <p>By clicking
         <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>
+        <a href="" target="_blank" class="text-success">terms of service</a>
     </form>
   </mdb-card-body>
 </mdb-card>

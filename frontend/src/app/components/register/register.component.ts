@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Location } from '@angular/common';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from '@angular/router';
 import {User} from "../../models/user";
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
 
 
   constructor(private userService: UserService,
+              private location: Location,
               private formBuilder: FormBuilder,
               private authenticationService: AuthenticationService,
               private route: ActivatedRoute){
@@ -44,6 +46,11 @@ export class RegisterComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  closeModal(){
+    this.location.back();
+    this.location.back();
+  }
+
   registerSubmit(post) {
     if (this.registerForm.valid) {
       this.newUser.firstName = post.firstName.trim();
@@ -65,7 +72,7 @@ export class RegisterComponent implements OnInit {
               });
         }
       });
-      }
+       }
       this.buildFormRegister();
     }
 }

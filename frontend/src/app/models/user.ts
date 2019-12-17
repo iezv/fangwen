@@ -7,5 +7,6 @@ export class User {
   phone: string;
   subscribe: boolean = false;
   role: string;
+  language: string = 'EN';
   token?: string;
 }
