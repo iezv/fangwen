@@ -19,7 +19,7 @@
           <tbody>
           <tr mdbTableCol *ngFor="let item of items">
             <th scope="row">{{item.id}}</th>
-            <td>{{item.categoryId}}</td>
+            <td>{{item.category.name}}</td>
             <td>{{item.name}}</td>
             <td>{{item.description}}</td>
             <td>{{item.price}}</td>

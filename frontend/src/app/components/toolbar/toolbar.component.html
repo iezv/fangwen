@@ -1,76 +1,86 @@
 <!--Navbar-->
   <div class="header-navbar container-fluid">
-    <div class="row account-menu">
-      <div class="col-md-8">
-        <nav class="nav py-3">
-          <a class="nav-link text-dark" routerLink="/myaccount">{{'my_account' | translate}}</a>
-          <a class="nav-link text-dark" routerLink="/mywishlist">{{'my_wishlist' | translate}}</a>
-          <a class="nav-link text-dark" routerLink="/mycart">{{'my_cart' | translate}}</a>
-          <a class="nav-link text-dark" routerLink="/checkout">{{'checkout' | translate}}</a>
-          <a *ngIf="!curentUser"class="nav-link text-dark" routerLink="/login">{{'log_in' | translate}}</a>
-          <a *ngIf="curentUser"class="nav-link text-dark" (click)="logOut()">Log Out</a>
-        </nav>
-      </div>
-      <div class="col-md-4">
-        <ul class="nav justify-content-end py-3">
-          <li *ngIf="curentUser" class="nav-item" style="margin-right: 15px">Welcome {{curentUser.firstName}}</li>
-          <li class="nav-item">
-            <div class="btn-group language-btn" href="#" mdbDropdown>
-              <div mdbDropdownToggle>
-                 <img *ngIf="language=='EN'" class="img-flag" height="20" src="../../../assets/images/flags/american.png">
-                 <img *ngIf="language=='IW'" class="img-flag" height="20" src="../../../assets/images/flags/israel.png">
-                 <img *ngIf="language=='RU'"  class="img-flag" height="20" src="../../../assets/images/flags/russia.png">
-                 <mdb-icon fas icon="angle-down" class="text-dark"></mdb-icon>
-              </div>
-              <div class="dropdown-menu dropdown-primary flag-menu">
-                <a class="dropdown-item" (click)="setLanguage('IW')">
-                  <img  class="img-flag" height="20" src="../../../assets/images/flags/israel.png"></a>
-                <a class="dropdown-item" (click)="setLanguage('EN')">
-                  <img  class="img-flag" height="20" src="../../../assets/images/flags/american.png"></a>
-                <a class="dropdown-item" (click)="setLanguage('RU')">
-                  <img  class="img-flag" height="20" src="../../../assets/images/flags/russia.png"></a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row brand-card-search">
-      <div class="col-md-6 brand-flex">
-         <div class="block-brand">
-           <a href="#"><img height="100" src="../../../assets/images/sefel-logo-short.png"></a>
-         </div>
-        <div class="block-title">
-          <div>{{'sefel' | translate}}</div>
-        </div>
-        <div class="losung">{{'losung' | translate}}</div>
-      </div>
-      <div class="col-md-6 cart-search-flex">
-        <a routerLink="/mycart">
-          <div class="block-cart-flex">
-            <mdb-icon fas icon="shopping-cart" size="lg"></mdb-icon>
-            <div class="cart-text">Cart $ 0.00</div>
+    <div class="row top-toolbar" >
+        <div class="top-toolbar-menu">
+          <div class="top-toolbar-menu-left">
+            <nav class="nav py-0">
+              <a class="nav-link text-white" routerLink="/">Home</a>
+              <a class="nav-link text-white" routerLink="/about">Help center</a>
+              <a class="nav-link text-white" routerLink="/delivery">Shipping & payment</a>
+              <a class="nav-link text-white" routerLink="/">Exchange & return</a>
+              <a class="nav-link text-white" routerLink="/contact">Contacts</a>
+            </nav>
           </div>
-        </a>
-        <div class="block-search">
-          <!-- Search form -->
-          <form class="form-inline waves-light" mdbWavesEffect>
-            <div class="md-form mt-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            </div>
-          </form>
-        </div>
+
+          <div class="top-toolbar-menu-right">
+            <nav class="nav py-0">
+              <a *ngIf="!curentUser" class="nav-link text-white" routerLink="/login">{{'log_in' | translate}}</a>
+              <a *ngIf="curentUser" class="nav-link text-white" (click)="logOut()">Log Out</a>
+              <div class="nav-link text-white">
+                <div class="btn-group language-btn" href="#" mdbDropdown>
+                  <div mdbDropdownToggle>
+                    <img *ngIf="language=='EN'" class="img-flag" height="20" src="../../../assets/images/flags/american.png" alt="EN">
+                    <img *ngIf="language=='IW'" class="img-flag" height="20" src="../../../assets/images/flags/israel.png" alt="IL">
+                    <img *ngIf="language=='RU'"  class="img-flag" height="20" src="../../../assets/images/flags/russia.png" alt="RU">
+                    <mdb-icon fas icon="angle-down" class="text-white icon-language"></mdb-icon>
+                  </div>
+                  <div class="dropdown-menu dropdown-primary flag-menu">
+                    <a class="dropdown-item" (click)="setLanguage('IW')">
+                      <img  class="img-flag" height="20" src="../../../assets/images/flags/israel.png" alt="IL"></a>
+                    <a class="dropdown-item" (click)="setLanguage('EN')">
+                      <img  class="img-flag" height="20" src="../../../assets/images/flags/american.png" alt="EN"></a>
+                    <a class="dropdown-item" (click)="setLanguage('RU')">
+                      <img  class="img-flag" height="20" src="../../../assets/images/flags/russia.png" alt="RU"></a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="nav-menu-flex">
-          <button type="button" mdbBtn color="dark" mdbWavesEffect routerLink="/">Home</button>
-          <button type="button" mdbBtn color="dark" mdbWavesEffect>Tea map</button>
-          <button type="button" mdbBtn color="dark" mdbWavesEffect>Coffee map</button>
-          <button type="button" mdbBtn color="dark" mdbWavesEffect>Sweets</button>
-          <button type="button" mdbBtn color="dark" mdbWavesEffect>Attributes</button>
-          <button type="button" mdbBtn color="dark" mdbWavesEffect>Helpful</button>
+    <div class="row meddle-toolbar">
+      <div class="meddle-toolbar-menu">
+        <div class="meddle-toolbar-menu-left">
+          <nav class="nav py-0">
+            <a class="nav-link text-dark" routerLink="/">NEW!</a>
+            <a class="nav-link text-dark" routerLink="/">BRAS</a>
+            <a class="nav-link text-dark" routerLink="/">PANTIES</a>
+            <a class="nav-link text-dark" routerLink="/">LINGERIE</a>
+            <a class="nav-link text-dark" routerLink="/">SLEEP</a>
+            <a class="nav-link text-dark" routerLink="/">SWIM</a>
+            <a class="nav-link text-dark" routerLink="/">ACCESSORIES</a>
+            <a class="nav-link text-dark" routerLink="/">SALE</a>
+          </nav>
+        </div>
+        <div class="meddle-toolbar-menu-center">
+          <section class="image-brand">
+            <a class="nav-link text-white" routerLink="/"><img height="40" src="../../../assets/images/irina.png" alt="Irina"></a>
+          </section>
+          <section class="text-brand">the most beautiful polish lingerie</section>
+        </div>
+        <div class="meddle-toolbar-menu-right">
+          <div class="cart-search-flex">
+            <a routerLink="/">
+              <div class="block-liked-flex">
+                <mdb-icon fas icon="heart" size="lg" class="text-dark"></mdb-icon>
+                <div class="liked-text text-dark">0</div>
+              </div>
+            </a>
+            <a routerLink="/mycart">
+              <div class="block-cart-flex">
+                <mdb-icon fas icon="shopping-cart" size="lg" class="text-dark"></mdb-icon>
+                <div class="cart-text text-dark">$ 0.00</div>
+              </div>
+            </a>
+            <div class="block-search">
+              <!-- Search form -->
+              <form class="form-inline waves-light" mdbWavesEffect>
+                <div class="md-form mt-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

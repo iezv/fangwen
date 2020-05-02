@@ -24,6 +24,6 @@ export class AdminCategoriesComponent {
 
   getCategories(){
     this.itemService.getAllCategories()
-      .subscribe(data => this.categories = data);
+      .subscribe(data => this.categories = data );
   }
 }

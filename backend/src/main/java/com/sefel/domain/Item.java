@@ -3,11 +3,12 @@ package com.sefel.domain;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "t_item")
 @Proxy(lazy=false)
-public class Item {
+public class Item implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,16 +42,8 @@ public class Item {
     public Item() {
     }
 
-    public Item(Category category, String name, String description, Double price, Double discount, Boolean inStock,
-                Double amount, String imageId) {
-        this.category = category;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.discount = discount;
-        this.inStock = inStock;
-        this.amount = amount;
-        this.imageId = imageId;
+    public Integer getId() {
+        return id;
     }
 
     public Category getCategory() {

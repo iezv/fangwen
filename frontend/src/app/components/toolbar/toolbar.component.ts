@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {User} from "../../models/user";
 import {TranslateService} from '@ngx-translate/core';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-toolbar',

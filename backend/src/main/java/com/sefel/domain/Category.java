@@ -4,11 +4,12 @@ package com.sefel.domain;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "t_category")
 @Proxy(lazy=false)
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +22,10 @@ public class Category {
     private String description;
 
     public Category() {
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {
@@ -38,6 +43,8 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 
     @Override
     public String toString() {

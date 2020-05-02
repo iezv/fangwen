@@ -1,85 +1,102 @@
 .header-navbar{
-  background-image: url(../../../assets/backgraund/whitewood.jpeg);
-  border-bottom: 1px solid #ddd;
-  background-repeat: repeat;
-  height: 216.3px;
-  color: #002727;
-  text-transform: none;
-  text-decoration: none;
-}
-.account-menu{
-  height: 51.3px;
-  color: #002727;
-}
-.brand-card-search{
-  height: 110px;
-}
-.brand-flex{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.block-title{
-  line-height: 68.57px;
-  font-size: 48px;
-  color: #002727;
-  font-family: Pacifico,cursive;
-  margin: 0 0 0 10px;
-  letter-spacing: 3px;
-}
-.losung{
-  position: relative;
-  font-size: 16px;
-  left: -35px;
-  top: 28px;
-  font-family: Pacifico,cursive;
-}
-.cart-search-flex{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: #002727;
-}
-.block-cart-flex{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: #002727;
-}
-.cart-text{
-  margin-left: 15px;
-}
-.block-search{
-  margin-left: 25px;
-  position: relative;
-  top: 16px;
-}
-.img-flag{
-  margin-right: 10px;
-}
+  .top-toolbar {
+    background: #009933;
+    .top-toolbar-menu {
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      text-transform: none;
+      text-decoration: none;
+      .top-toolbar-menu-left {
+        margin-right: 10%;
+      }
+    }
+  }
+  .meddle-toolbar {
+    background: #E9F7EF;
+    .meddle-toolbar-menu {
+      margin-left: 4%;
+      margin-right: 4%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      text-transform: none;
+      text-decoration: none;
 
-.language-btn{
-  cursor: pointer;
+      .meddle-toolbar-menu-left {
+      }
+      .meddle-toolbar-menu-center{
+        display: flex;
+        padding-left: 0;
+        padding-right: 5%;
+        section {
+          flex: 1;          /* new; same as flex: 1 1 0 */
+          overflow: hidden; /* new */
+          display: flex;
+          justify-content: left;
+          text-align: center;
+        }
+        section:nth-child(1){
+          margin-right: 20px;
+        }
+        section:nth-child(2){
+          font-family: "Apple Chancery", cursive;
+          font-size: 16px;
+        }
+      }
+      .meddle-toolbar-menu-right{
+        .cart-search-flex{
+          display: flex;
+          align-items: center;
+          text-align: center;
+          .block-search {
+            margin-left: 30px;
+            position: relative;
+            top: 14px;
+          }
+          .block-cart-flex{
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              .cart-text{
+                margin-left: 5px;
+                text-transform: none;
+                text-decoration: none;
+            }
+          }
+          .block-liked-flex{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 25px;
+            .liked-text{
+              margin-left: 5px;
+              text-transform: none;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .dropdown-menu.dropdown-primary.flag-menu {
   border-color: transparent;
-  color: #002727;
+  background: transparent;
   min-width: 20px;
 }
-.nav-menu-flex{
-  display: flex;
-  height: 45px !important;
-  width: 1161px;
-  align-items: center;
-  text-align: center;
-  justify-content: stretch;
-  margin: 10px 0 0 !important;
-  padding: 0 !important;
-  button{
-    margin: 0 0.5px;
-    padding: 5px;
-    height: 45px;
-    width: 193.33px;
-  }
+
+.icon-language{
+  margin-left: 5px;
+}
+
+.language-btn {
+  cursor: pointer;
 }
